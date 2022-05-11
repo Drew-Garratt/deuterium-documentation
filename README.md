@@ -4,11 +4,11 @@ description: The what and the why of Deuterium.
 
 # Introduction
 
-### Motivation
+## Motivation
 
 Deuterium is a headless starter project bridging the gap between hydrogen and the requirements of our clients today.
 
-### Starter Repository
+## Starter Repository
 
 The starter repository is intended to establish a **structure** and present a lifecycle perspective (dx, ci/cd, deployments...)
 
@@ -17,7 +17,7 @@ The starter repository is intended to establish a **structure** and present a li
 * Integrate **tools & configs** (eslint, jest, playwright, storybook, changelogs, versioning, codecov, codeclimate...).
 * Clarify some **advantages** of monorepos (team cohesion, consistency, duplication, refactorings, atomic commits...).
 
-### Structure
+## Structure
 
 ```
 .
@@ -29,27 +29,27 @@ The starter repository is intended to establish a **structure** and present a li
     └── ui-lib     (storybook)
 ```
 
-**Apps**
+### **Apps**
 
 * apps/storefront-app: SSR, i18n (LingQui), React Query...&#x20;
 * apps/storefront-theme: Simple nextjs.
 
 > Apps should not depend on apps, they can depend on packages
 
-**Shared packages**
+### **Shared packages**
 
 * packages/styles-lib: used by storefront-app, publishable. README | CHANGELOG
 * packages/ui-lib: used by storefront-app, publishable. README | CHANGELOG
 
 > Apps can depend on packages, packages can depend on each others...
 
-**Shared static assets**
+### **Shared static assets**
 
 If needed static resources like **locales**, **images**,... can be shared by using symlinks in the repo.
 
 * See the global static folder.
 
-**Folder overview**
+### **Folder overview**
 
 <details>
 
@@ -111,9 +111,9 @@ If needed static resources like **locales**, **images**,... can be shared by usi
 
 </details>
 
-### How to
+## How to
 
-#### 1. Enable workspace support
+### 1. Enable workspace support
 
 <details>
 
@@ -130,7 +130,7 @@ If needed static resources like **locales**, **images**,... can be shared by usi
 
 </details>
 
-#### 2. Create a new package
+### 2. Create a new package
 
 Create a folder in [./packages/](https://github.com/belgattitude/nextjs-monorepo-example/blob/main/packages) directory with the name of your package.
 
@@ -176,9 +176,9 @@ Initialize a package.json with the name of your package.
 
 </details>
 
-#### 3. Using the package in app
+### 3. Using the package in app
 
-**Step 3.1: package.json**
+#### **Step 3.1: package.json**
 
 First add the package to the app package.json. The recommended way is to use the [workspace protocol](https://yarnpkg.com/features/protocols#workspace) supported by yarn and pnpm.
 
@@ -197,7 +197,7 @@ Inspiration can be found in [apps/nextjs-app/package.json](https://github.com/be
 
 </details>
 
-**Step 3.2: In tsconfig.json**
+#### **Step 3.2: In tsconfig.json**
 
 Then add a typescript path alias in the app tsconfig.json. This will allow you to import it directly (no build needed)
 
@@ -211,7 +211,7 @@ Inspiration can be found in [apps/nextjs-app/tsconfig.json](https://github.com/b
 
 </details>
 
-**Step 3.3: Next config**
+#### **Step 3.3: Next config**
 
 Edit your `next.config.js` and enable the [experimental.externalDir option](https://github.com/vercel/next.js/pull/22867). Feedbacks [here](https://github.com/vercel/next.js/discussions/26420).
 
@@ -224,11 +224,11 @@ const nextConfig = {
 export default nextConfig;
 ```
 
-**Step 3.4: Using the package**
+#### **Step 3.4: Using the package**
 
 The packages are now linked to your app, just import them like regular packages: `import { poney } from '@your-org/magnificent-poney'`.
 
-#### 4. Publishing
+### 4. Publishing
 
 > Optional
 
@@ -246,9 +246,9 @@ Follow the instructions... and commit the changeset file. A "Version Packages" P
 > * To disable automatic publishing of some packages, just set `"private": "true"` in their package.json.
 > * Want to tune the behaviour, see [.changeset/config.json](https://github.com/belgattitude/nextjs-monorepo-example/blob/main/.changeset/config.json).
 
-### Monorepo essentials&#x20;
+## Monorepo essentials&#x20;
 
-#### Monorepo scripts
+### Monorepo scripts
 
 Some convenience scripts can be run in any folder of this repo and will call their counterparts defined in packages and apps.
 
@@ -283,23 +283,23 @@ The global commands `yarn deps:check` and `yarn deps:update` will help to mainta
 
 > After running `yarn deps:update`, a `yarn install` is required. To prevent having duplicates in the yarn.lock, you can run `yarn dedupe --check` and `yarn dedupe` to apply deduplication. The duplicate check is enforced in the example github actions.
 
-### Quality
+## Quality
 
-#### Linters
+### Linters
 
 An example of base eslint configuration can be found in [./.eslint.base.js](file:///Users/drewgarratt/Development/deuterium/.eslintrc.base.js), apps and packages extends it in their own root folder, as an example see [./apps/web-app/.eslintrc.js](file:///Users/drewgarratt/Development/deuterium/apps/web-app/.eslintrc.js). Prettier is included in eslint configuration as well as [eslint-config-next](https://nextjs.org/docs/basic-features/eslint) for nextjs apps.
 
 For code complexity and deeper code analysis [sonarjs plugin](https://github.com/SonarSource/eslint-plugin-sonarjs) is activated.
 
-#### Hooks / Lint-staged
+### Hooks / Lint-staged
 
 Check the [.husky](file:///Users/drewgarratt/Development/deuterium/.husky) folder content to see what hooks are enabled. Lint-staged is used to guarantee that lint and prettier are applied automatically on commit and/or pushes.
 
-#### Tests
+### Tests
 
 Tests relies on ts-jest with support for typescript path aliases. React-testing-library is enabled whenever react is involved. Configuration lives in the root folder of each apps/packages.
 
-#### CI
+### CI
 
 You'll find some example workflows for github action in [.github/workflows](file:///Users/drewgarratt/Development/deuterium/.github/workflows). By default, they will ensure that
 
@@ -331,9 +331,9 @@ To ensure decent performance, those features are present in the example actions:
     >    - ".eslintignore"
     > ```
 
-### Editor support
+## Editor support
 
-#### VSCode
+### VSCode
 
 The ESLint plugin requires that the `eslint.workingDirectories` setting is set:
 
@@ -350,39 +350,39 @@ The ESLint plugin requires that the `eslint.workingDirectories` setting is set:
 
 More info [here](https://github.com/microsoft/vscode-eslint#mono-repository-setup)
 
-### Deploy
+## Deploy
 
-#### Vercel
+### Vercel
 
 Vercel support natively monorepos, see the [vercel-monorepo-deploy](file:///Users/drewgarratt/Development/deuterium/docs/deploy/deploy-vercel.md) document.
 
-#### Docker
+### Docker
 
 There's a basic example for building a docker image, read the [docker doc](file:///Users/drewgarratt/Development/deuterium/docs/docker/docker.md).
 
-#### Others
+### Others
 
 Netlify, aws-amplify, k8s-docker, serverless-nextjs recipes might be added in the future. PR's welcome too.
 
-### FAQ
+## FAQ
 
-#### Monorepo
+### Monorepo
 
-**Benefits**
+#### **Benefits**
 
 * [x] **Ease of code reuse.** You can easily extract shared libraries (like api, shared ui, locales, images...) and use them across apps without the need of handling them in separate git repos (removing the need to publish, version, test separately...). This limit the tendency to create code duplication amongst developers when time is short.
 * [x] **Atomic commits.** When projects that work together are contained in separate repositories, releases need to sync which versions of one project work with the other. In monorepo CI, sandboxes and releases are much easier to reason about (ie: [dependency hell](https://en.wikipedia.org/wiki/Dependency\_hell)...). A pull-request contains all changes at once, no need to coordinate multiple packages versions to test it integrally (multiple published canary versions...).
 * [x] **Code refactoring.** Changes made on a library will immediately propagate to all consuming apps / packages. Typescript / typechecks, tests, ci, sandboxes... will improve the confidence to make a change _(or the right one thanks to improved discoverability of possible side effects)_. It also limits the tendency to create tech debt as it invites the dev to refactor all the code that depends on a change.
 * [x] **Collaboration across teams**. Consistency, linters, discoverability, duplication... helps to maintain cohesion and collaboration across teams.
 
-**Drawbacks**
+#### **Drawbacks**
 
 * [x] **Increased build time**. Generally a concern but not relevant in this context thanks to the combination of nextjs/webpack5, typescript path aliases and yarn. Deps does not need to be build... modified files are included as needed and properly cached (nextjs webpack5, ci, deploy, docker/buildkit...).
 * [x] **Versioning and publishing**. Sometimes a concern when you want to use the shared libraries outside of the monorepo. See the notes about [atlassian changeset](https://github.com/atlassian/changesets). Not relevant here.
 * [x] **Git repo size**. All packages and apps and history will fit in the same git repository increasing its size and checkout time. Generally when you reach size problems, check for assets like images first and extract packages that don't churn anymore.
 * [x] **Multi-languages**. Setting up a monorepo containing code in multiple languages (php, ruby, java, node) is extremely difficult to handle due to nonexistence of mature tooling (bazel...).The general idea is to create a monorepo with the same stack (node, typescript...) and managed by the same package manager (yarn, pnpm,...)
 
-**Exact vs semver dependencies**
+#### **Exact vs semver dependencies**
 
 Apps dependencies and devDependencies are pinned to exact versions. Packages deps will use semver compatible ones. For more info about this change see [reasoning here](https://docs.renovatebot.com/dependency-pinning/) and our [renovabot.json5](file:///Users/drewgarratt/Development/deuterium/renovate.json5) configuration file.
 
@@ -390,7 +390,7 @@ To help keeping deps up-to-date, see the `yarn deps:check && yarn deps:update` s
 
 > When adding a dep through yarn cli (i.e.: yarn add something), it's possible to set the save-exact behaviour automatically by setting `defaultSemverRangePrefix: ""` in [yarnrc.yml](file:///Users/drewgarratt/Development/deuterium/.yarnrc.yml). But this would make the default for packages/\\\* as well. Better to handle `yarn add something --exact` on per-case basis.
 
-**About next-transpile-modules**
+#### **About next-transpile-modules**
 
 And why this repo example doesn't use it to support package sharing.
 
@@ -414,7 +414,7 @@ See here a quick comparison:
 | Webpack5            | ✅                  | ✅                        |
 | Publishable (npm)   | ✅                  | ❌ (ntm relies on "main") |
 
-### See also
+## See also
 
 * [https://stackoverflow.com/a/69554480/5490184](https://stackoverflow.com/a/69554480/5490184)
 

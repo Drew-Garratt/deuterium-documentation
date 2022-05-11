@@ -6,11 +6,11 @@ description: >-
 
 # XState
 
-### Introduction
+## Introduction
 
-XState provides us with a predictable, visual and extensible way to build complex logic into the state of our application. It does this by utilising two fundamental computing concepts; finite state machines and statecharts.
+XState provides us with a predictable, visual and extensible way to build complex logic into the state of our application. It does this by utilising three fundamental computing concepts; finite state machines, statecharts and the actor model.
 
-#### Finite state machines
+### Finite state machines
 
 A finite state machine is a mathematical model of computation that describes the behaviour of a system that can be in only one state at any given time. For example, let's say you can be represented by a state machine with a finite number (2) of states: `asleep` or `awake`. At any given time, you're either `asleep` or `awake`. It is impossible for you to be both `asleep` and `awake` at the same time, and it is impossible for you to be neither `asleep` nor `awake`.
 
@@ -24,6 +24,37 @@ A finite state machine is a mathematical model of computation that describes the
 
 </details>
 
-#### Statecharts
+### Statecharts
 
-Statecharts are a formalism for modeling stateful, reactive systems. Computer scientist David Harel presented this formalism as an extension to state machines in his 1987 paper [Statecharts: A Visual Formalism for Complex Systems (opens new window)](https://www.sciencedirect.com/science/article/pii/0167642387900359/pdf).
+Statecharts are a formalism for modeling stateful, reactive systems. Computer scientist David Harel presented this formalism as an extension to state machines in his 1987 paper [Statecharts: A Visual Formalism for Complex Systems (opens new window)](https://www.sciencedirect.com/science/article/pii/0167642387900359/pdf).&#x20;
+
+<details>
+
+<summary>More resources:</summary>
+
+* [Statecharts: A Visual Formalism for Complex Systems (opens new window)](https://www.sciencedirect.com/science/article/pii/0167642387900359/pdf)by David Harel
+* [The World of Statecharts (opens new window)](https://statecharts.github.io)by Erik Mogensen
+
+</details>
+
+### Actor Model
+
+The actor model is another very old mathematical model of computation that goes well with state machines. It states that everything is an "actor" that can do three things:
+
+* **Receive** messages
+* **Send** messages to other actors
+* Do something with the messages it received (its **behavior**), such as:
+  * change its local state
+  * send messages to other actors
+  * _spawn_ new actors
+
+An actor's behavior can be described by a state machine (or a statechart).
+
+<details>
+
+<summary>More resources:</summary>
+
+* [Actor model (opens new window)](https://en.wikipedia.org/wiki/Actor\_model)article on Wikipedia
+* [The actor model in 10 minutes (opens new window)](https://www.brianstorti.com/the-actor-model/)by Brian Storti
+
+</details>
