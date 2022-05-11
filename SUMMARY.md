@@ -2,6 +2,11 @@
 
 * [Introduction](README.md)
 
+## Components
+
+* [Default Components](components/default-components/README.md)
+  * [app-provider](components/default-components/app-provider.md)
+
 ## Features
 
 * [Libraries](features/libraries/README.md)
@@ -20,10 +25,15 @@
 * [Commands](features/commands/README.md)
   * [Monorepo Commands](features/commands/monorepo-commands.md)
 
-## Components
+## Development
 
-* [Default Components](components/default-components/README.md)
-  * [app-provider](components/default-components/app-provider.md)
+* [Root files & folders](development/root-files-and-folders/README.md)
+  * [app/storefront-app](development/root-files-and-folders/app-storefront-app.md)
+* [GraphQL Codgen](development/graphql-codgen.md)
+
+## Testing
+
+* [E2E testing with Playwright](testing/e2e-testing-with-playwright.md)
 
 ***
 
