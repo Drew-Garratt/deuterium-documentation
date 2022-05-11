@@ -57,3 +57,6 @@ const Page = () => (
 ...
 ```
 
+## Recommend Reading
+
+{% embed url="https://github.com/garmeeh/next-seo/blob/master/README.md" %}
