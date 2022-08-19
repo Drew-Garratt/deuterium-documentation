@@ -79,5 +79,3 @@ URL dataSource objects are provided by the helper script [datasources.md](../scr
 * [Static Site Generation](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) content can make use of React Query via [queryClient.prefetchQuery](https://react-query-beta.tanstack.com/reference/QueryClient#queryclientprefetchquery)
 *   In order to make use of React Queries internal cache and to allow the Query Client to use data generated during SSG our queries typically use 2 arguments.
 
-    *
-

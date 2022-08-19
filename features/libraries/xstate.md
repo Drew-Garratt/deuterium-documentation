@@ -33,7 +33,7 @@ Statecharts are a formalism for modeling stateful, reactive systems. Computer sc
 <summary>More resources:</summary>
 
 * [Statecharts: A Visual Formalism for Complex Systems (opens new window)](https://www.sciencedirect.com/science/article/pii/0167642387900359/pdf)by David Harel
-* [The World of Statecharts (opens new window)](https://statecharts.github.io)by Erik Mogensen
+* [The World of Statecharts (opens new window)](https://statecharts.github.io/)by Erik Mogensen
 
 </details>
 

@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Guidelines and Princeples](guidelines-and-princeples.md)
 
 ## Components
 

@@ -23,7 +23,7 @@ The starter repository is intended to establish a **structure** and present a li
 .
 ├── apps
 │   ├── storefront-app   (nextjs, storybook, e2e playwright)
-│   └── storefront-theme 
+│   └── storefront-theme  (Dawn theme)
 └── packages
     ├── styles-lib
     └── ui-lib     (storybook)
@@ -61,7 +61,7 @@ If needed static resources like **locales**, **images**,... can be shared by usi
 │   └── storefront-app           (NextJS storefront)
 │       ├── e2e/                 (E2E tests with playwright and MSW)
 │       │   ├── fixtures
-│       │   ├── integration
+│       │   ├── requestHandlers
 │       │   └── support
 │       ├── public/
 │       │   ├── assets
@@ -80,9 +80,12 @@ If needed static resources like **locales**, **images**,... can be shared by usi
 │       ├── .env                 (public keys)
 │       ├── babel.config.js
 │       ├── codegen.js           (graphQl codegen config)
+│       ├── constants.ts         (strongly typed project constants)
 │       ├── lingui.config.js    
 │       ├── next.config.js
+│       ├── next-i18next.config.js (i18 language config) 
 │       ├── package.json         (define package workspace:package deps)
+│       ├── playwright.config.js (playwright test configuration)
 │       └── tsconfig.json        (define path to packages)
 │
 ├── packages
